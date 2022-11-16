@@ -1,12 +1,32 @@
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <%= link_to "Restaurants", restaurants_path, class: "navbar-brand"%>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <%= link_to "New restaurant", new_restaurant_path, class: "nav-link active" %>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Disabled</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 <h2> Add a new restaurant </h2>
-<%= form_with model: @restaurant do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :address %>
-  <%= f.text_field :address %>
-  <%= f.label :phone_number %>
-  <%= f.text_field :phone_number %>
-  <%= f.label :category %>
-  <%= f.text_field :category %>
-  <%= f.submit %>
-<% end %>
+<div class="input-group mb-3">
+  <%= form_with model: @restaurant do |f| %>
+    <%= f.label :name, class:"input-group-text" %>
+    <%= f.text_field :name, class:"form-control" %>
+    <%= f.label :address, class:"input-group-text" %>
+    <%= f.text_field :address, class:"form-control" %>
+    <%= f.label :phone_number, class:"input-group-text" %>
+    <%= f.text_field :phone_number, class:"form-control" %>
+    <%= f.label :category, class:"input-group-text" %>
+    <%= f.text_field :category, class:"form-control" %>
+    <%= f.submit %>
+  <% end %>
+</div>
